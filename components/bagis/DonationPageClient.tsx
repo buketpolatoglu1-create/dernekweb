@@ -280,6 +280,33 @@ export function DonationPageClient() {
                 )}
               </CardContent>
             </Card>
+
+            {/* Corporate Support Card — Positioned directly under Donation Form */}
+            <Card className="border border-teal-500/30 bg-linear-to-r from-teal-500/5 via-primary/5 to-teal-500/5 rounded-2xl p-6 space-y-3 shadow-2xs">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-600 dark:text-teal-400 shrink-0">
+                  <Building2 className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg text-primary">
+                    {language === "en" ? "Corporate Sponsorship" : "Kurumsal Bağış & Sponsorluk"}
+                  </h3>
+                  <p className="text-xs text-teal-600 dark:text-teal-400 font-semibold">
+                    {language === "en" ? "CSR Projects & Institutional Support" : "Sosyal Sorumluluk & Kurumsal Destek"}
+                  </p>
+                </div>
+              </div>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                {language === "en"
+                  ? "For corporate donation receipts, strategic partnership, or project sponsorship, please contact us directly via email."
+                  : "Kurumunuz adına makbuzlu bağış, stratejik iş birliği ve proje sponsorlukları için doğrudan kurumsal e-posta adresimiz üzerinden bizimle iletişime geçebilirsiniz."}
+              </p>
+              <a href="mailto:iletisim@18-28genclikdernegi.org?subject=Kurumsal%20Bağış%20ve%20Sponsorluk" className="block pt-1">
+                <Button size="sm" variant="outline" className="w-full font-bold border-teal-500/40 text-teal-700 dark:text-teal-300 hover:bg-teal-500/10">
+                  iletisim@18-28genclikdernegi.org
+                </Button>
+              </a>
+            </Card>
           </div>
 
           {/* Right Column: Official Bank Account Card (Yapı Kredi Bankası TL / USD / EUR) */}
@@ -438,33 +465,6 @@ export function DonationPageClient() {
                   </p>
                 </div>
               </CardContent>
-            </Card>
-
-            {/* Corporate Support Card */}
-            <Card className="border border-teal-500/30 bg-linear-to-r from-teal-500/5 via-primary/5 to-teal-500/5 rounded-2xl p-6 space-y-3 shadow-2xs">
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-600 dark:text-teal-400 shrink-0">
-                  <Building2 className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg text-primary">
-                    {language === "en" ? "Corporate Sponsorship" : "Kurumsal Bağış & Sponsorluk"}
-                  </h3>
-                  <p className="text-xs text-teal-600 dark:text-teal-400 font-semibold">
-                    {language === "en" ? "CSR Projects & Institutional Support" : "Sosyal Sorumluluk & Kurumsal Destek"}
-                  </p>
-                </div>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                {language === "en"
-                  ? "For corporate donation receipts, strategic partnership, or project sponsorship, please contact us directly via email."
-                  : "Kurumunuz adına makbuzlu bağış, stratejik iş birliği ve proje sponsorlukları için doğrudan kurumsal e-posta adresimiz üzerinden bizimle iletişime geçebilirsiniz."}
-              </p>
-              <a href="mailto:iletisim@18-28genclikdernegi.org?subject=Kurumsal%20Bağış%20ve%20Sponsorluk" className="block pt-1">
-                <Button size="sm" variant="outline" className="w-full font-bold border-teal-500/40 text-teal-700 dark:text-teal-300 hover:bg-teal-500/10">
-                  iletisim@18-28genclikdernegi.org
-                </Button>
-              </a>
             </Card>
 
           </div>
