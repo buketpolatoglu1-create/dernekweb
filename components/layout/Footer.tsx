@@ -109,14 +109,22 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-border/40 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-xs text-muted-foreground text-center md:text-left">
-            &copy; {currentYear} {siteConfig.name}. {t("footer.rights")}
-            <span className="inline-block md:inline ml-0 md:ml-3 pt-1 md:pt-0 text-accent font-bold">
-              • {language === "en" ? "Website prepared by Buket Polatoğlu" : "Web sitesini hazırlayan Buket Polatoğlu"}
-            </span>
-          </p>
-          <p className="text-xs text-muted-foreground text-center md:text-right">
+        <div className="mt-12 border-t border-border/40 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
+          <div className="space-y-1 text-center md:text-left">
+            <p>&copy; {currentYear} {siteConfig.name}. {t("footer.rights")}</p>
+            <p className="text-accent font-bold">
+              {language === "en" ? "Website prepared by " : "Web sitesini hazırlayan "}
+              <a
+                href="https://www.linkedin.com/in/buket-polato%C4%9Flu-024893225/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-primary transition-colors cursor-pointer"
+              >
+                Buket Polatoğlu
+              </a>
+            </p>
+          </div>
+          <p className="text-center md:text-right">
             Siyasi bir bağı yoktur ve kâr amacı gütmeyen gönüllü bir kuruluştur.
           </p>
         </div>
