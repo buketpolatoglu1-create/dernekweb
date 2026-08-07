@@ -82,20 +82,12 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                    className="text-sm text-accent hover:underline font-semibold transition-colors"
                   >
                     {getNavTitle(item.href, item.title)}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href="/tuzuk"
-                  className="text-sm text-accent hover:underline font-semibold transition-colors"
-                >
-                  {language === "en" ? "Association Bylaws" : "Dernek Tüzüğü"}
-                </Link>
-              </li>
             </ul>
           </div>
 
