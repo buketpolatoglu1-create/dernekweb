@@ -104,13 +104,13 @@ export function EventsCarousel({ events }: EventsCarouselProps) {
       </div>
 
       {/* Carousel */}
-      <div className="relative px-8 sm:px-10">
+      <div className="relative px-0 sm:px-10">
         {/* Left Arrow */}
         <button
           type="button"
           onClick={handlePrev}
           aria-label="Önceki etkinlik"
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 h-10 w-10 sm:h-12 sm:w-12 rounded-full border-2 border-primary/70 bg-background text-primary hover:border-primary hover:bg-primary hover:text-white shadow-lg transition-all duration-200 flex items-center justify-center cursor-pointer"
+          className="hidden sm:flex absolute -left-4 top-1/2 -translate-y-1/2 z-20 h-10 w-10 sm:h-12 sm:w-12 rounded-full border-2 border-primary/70 bg-background text-primary hover:border-primary hover:bg-primary hover:text-white shadow-lg transition-all duration-200 items-center justify-center cursor-pointer"
         >
           <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
         </button>
@@ -120,7 +120,7 @@ export function EventsCarousel({ events }: EventsCarouselProps) {
           type="button"
           onClick={handleNext}
           aria-label="Sonraki etkinlik"
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 h-10 w-10 sm:h-12 sm:w-12 rounded-full border-2 border-primary/70 bg-background text-primary hover:border-primary hover:bg-primary hover:text-white shadow-lg transition-all duration-200 flex items-center justify-center cursor-pointer"
+          className="hidden sm:flex absolute -right-4 top-1/2 -translate-y-1/2 z-20 h-10 w-10 sm:h-12 sm:w-12 rounded-full border-2 border-primary/70 bg-background text-primary hover:border-primary hover:bg-primary hover:text-white shadow-lg transition-all duration-200 items-center justify-center cursor-pointer"
         >
           <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
         </button>
@@ -177,9 +177,18 @@ export function EventsCarousel({ events }: EventsCarouselProps) {
           </div>
         </div>
 
-        {/* Dot indicators */}
-        {events.length > itemsPerView && (
-          <div className="flex justify-center gap-1.5 mt-4">
+        {/* Dot indicators & Mobile Controls */}
+        <div className="flex items-center justify-between sm:justify-center gap-3 mt-4">
+          <button
+            type="button"
+            onClick={handlePrev}
+            aria-label="Önceki"
+            className="flex sm:hidden h-9 w-9 rounded-full border border-primary/50 items-center justify-center text-primary shrink-0"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+          
+          <div className="flex justify-center gap-1.5">
             {Array.from({ length: maxIndex + 1 }).map((_, i) => (
               <button
                 key={i}
@@ -194,7 +203,16 @@ export function EventsCarousel({ events }: EventsCarouselProps) {
               />
             ))}
           </div>
-        )}
+
+          <button
+            type="button"
+            onClick={handleNext}
+            aria-label="Sonraki"
+            className="flex sm:hidden h-9 w-9 rounded-full border border-primary/50 items-center justify-center text-primary shrink-0"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -51,7 +51,7 @@ export function Header() {
             alt="18-28 Gençlik Derneği"
             className="h-11 sm:h-13 lg:h-15 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
-          <span className="font-heading text-lg sm:text-xl lg:text-2xl font-extrabold tracking-tight whitespace-nowrap inline-flex items-center gap-1.5">
+          <span className="font-heading text-base sm:text-xl lg:text-2xl font-extrabold tracking-tight whitespace-nowrap inline-flex items-center gap-1 sm:gap-1.5">
             <span className="text-primary">18-28</span>{" "}
             <span className="bg-gradient-to-r from-accent to-teal-400 bg-clip-text text-transparent">
               {language === "en" ? "Youth Association" : "Gençlik Derneği"}

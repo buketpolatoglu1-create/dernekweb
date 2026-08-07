@@ -126,7 +126,7 @@ export function DonationPageClient() {
                 </CardDescription>
               </CardHeader>
               
-              <CardContent className="p-6 space-y-6">
+              <CardContent className="p-4 sm:p-6 space-y-5">
                 {/* Donation Type Tabs */}
                 <div className="grid grid-cols-2 gap-2 bg-muted/40 p-1.5 rounded-xl border border-border/40">
                   <button
@@ -158,7 +158,7 @@ export function DonationPageClient() {
                   <label className="text-xs font-bold text-primary uppercase tracking-wider block">
                     {language === "en" ? "Select Amount" : "Bağış Miktarını Seçin"}
                   </label>
-                  <div className="grid grid-cols-3 sm:grid-cols-5 gap-2.5">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
                     {[250, 500, 1000, 2500].map((amt) => (
                       <button
                         key={amt}
@@ -167,7 +167,7 @@ export function DonationPageClient() {
                           setSelectedAmount(amt);
                           setCustomAmount("");
                         }}
-                        className={`py-3 px-2 text-sm font-extrabold rounded-xl border transition-all ${
+                        className={`py-2.5 sm:py-3 px-2 text-xs sm:text-sm font-extrabold rounded-xl border transition-all ${
                           selectedAmount === amt
                             ? "bg-accent text-white border-accent shadow-xs scale-[1.02]"
                             : "bg-background border-border/80 hover:border-accent text-primary"
