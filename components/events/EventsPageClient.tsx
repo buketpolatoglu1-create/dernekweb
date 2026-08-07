@@ -14,6 +14,11 @@ interface EventsPageClientProps {
 export function EventsPageClient({ events }: EventsPageClientProps) {
   const { language } = useLanguage();
 
+  // Strict sorting: Newest events first (En güncelden geçmişe doğru)
+  const sortedEvents = [...events].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
   return (
     <div className="flex flex-col w-full min-h-screen py-10">
       <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-12">
@@ -28,14 +33,14 @@ export function EventsPageClient({ events }: EventsPageClientProps) {
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
             {language === "en"
-              ? "Moments compiled from festivals, workshops, speaking clubs, and networking gatherings we have held to date."
-              : "Bugüne kadar gerçekleştirdiğimiz şenlikler, eğitimler, konuşma kulüpleri ve networking buluşmalarından derlediğimiz anlar."}
+              ? "Moments compiled from festivals, workshops, speaking clubs, and networking gatherings we have held to date (Sorted newest to oldest)."
+              : "Bugüne kadar gerçekleştirdiğimiz şenlikler, eğitimler, konuşma kulüpleri ve networking buluşmalarından derlediğimiz anlar (En güncelden geçmişe doğru sıralı)."}
           </p>
         </div>
 
         {/* Gallery / Archive List */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
-          {events.map((event) => {
+          {sortedEvents.map((event) => {
             const title = language === "en" ? (eventTranslations[event.slug]?.title || event.title) : event.title;
             const description = language === "en" ? (eventTranslations[event.slug]?.description || event.description) : event.description;
             const body = language === "en" ? (eventTranslations[event.slug]?.body || event.body) : event.body;
