@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Home, Info, Megaphone, Calendar, FileText, Mail, Heart, UserCheck } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/content/site-config";
@@ -28,7 +28,7 @@ export function Header() {
       case "/etkinlikler":
         return t("nav.events");
       case "/tuzuk":
-        return language === "en" ? "Bylaws" : "Dernek Tüzüğü";
+        return language === "en" ? "Association Bylaws" : "Dernek Tüzüğü";
       case "/basvuru-ve-iletisim":
         return t("nav.contact");
       case "/bagis":
@@ -38,10 +38,41 @@ export function Header() {
     }
   };
 
+  const getNavIcon = (href: string) => {
+    switch (href) {
+      case "/":
+        return <Home className="h-5 w-5 text-accent" />;
+      case "/hakkimizda":
+        return <Info className="h-5 w-5 text-accent" />;
+      case "/duyurular":
+        return <Megaphone className="h-5 w-5 text-accent" />;
+      case "/etkinlikler":
+        return <Calendar className="h-5 w-5 text-accent" />;
+      case "/tuzuk":
+        return <FileText className="h-5 w-5 text-accent" />;
+      case "/basvuru-ve-iletisim":
+        return <Mail className="h-5 w-5 text-accent" />;
+      default:
+        return <ArrowRight className="h-5 w-5 text-accent" />;
+    }
+  };
+
   // Close mobile nav when pathname changes
   React.useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
+
+  // Lock body scroll when mobile menu is open
+  React.useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-md shadow-xs mb-4 sm:mb-6">
@@ -101,68 +132,92 @@ export function Header() {
 
           {/* Hamburger button */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen(true)}
             className="inline-flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl border border-border/50 text-muted-foreground hover:bg-muted lg:hidden"
-            aria-label="Menüyü Aç/Kapat"
+            aria-label="Menüyü Aç"
           >
-            {isOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
+            <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Navigation with Framer Motion */}
+      {/* Full-Screen Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.4 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsOpen(false)}
-              className="fixed inset-0 top-20 sm:top-24 z-40 bg-black lg:hidden"
-            />
-            {/* Mobile Drawer */}
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "tween", duration: 0.2 }}
-              className="fixed inset-y-20 sm:inset-y-24 right-0 z-40 w-[300px] max-w-[85vw] border-l border-border bg-background px-6 py-6 shadow-2xl lg:hidden flex flex-col justify-between overflow-y-auto"
-            >
-              <div className="flex flex-col space-y-3">
-                {siteConfig.mainNav.map((item) => (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="fixed inset-0 z-[100] bg-background flex flex-col justify-between overflow-y-auto p-5 sm:p-8 lg:hidden"
+          >
+            {/* Top Bar inside Overlay */}
+            <div className="flex items-center justify-between border-b border-border/40 pb-4 mb-4">
+              <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2.5">
+                <img
+                  src="/images/logo-icon.png"
+                  alt="18-28 Gençlik Derneği"
+                  className="h-10 w-auto object-contain"
+                />
+                <span className="font-heading text-lg font-extrabold text-primary">
+                  18-28 Gençlik Derneği
+                </span>
+              </Link>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="h-11 w-11 rounded-xl bg-muted/60 flex items-center justify-center text-primary hover:bg-muted transition-colors border border-border/60"
+                aria-label="Menüyü Kapat"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            {/* Vertically Spaced Full Mobile Navigation List */}
+            <div className="flex flex-col space-y-2 py-2 flex-1 justify-center">
+              {siteConfig.mainNav.map((item) => {
+                const isActive = pathname === item.href;
+                return (
                   <Link
                     key={item.href}
                     href={item.href}
+                    onClick={() => setIsOpen(false)}
                     className={cn(
-                      "text-base font-semibold transition-colors hover:text-accent py-2.5 border-b border-border/30 flex items-center justify-between",
-                      pathname === item.href
-                        ? "text-primary font-bold"
-                        : "text-muted-foreground"
+                      "flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border transition-all duration-200",
+                      isActive
+                        ? "bg-primary/10 border-accent/40 text-primary font-extrabold shadow-2xs"
+                        : "bg-background hover:bg-muted/50 border-border/40 text-foreground font-semibold"
                     )}
                   >
-                    <span>{getNavTitle(item.href, item.title)}</span>
-                    <ArrowRight className="h-4 w-4 text-muted-foreground/50" />
+                    <div className="flex items-center gap-3.5">
+                      <div className="h-9 w-9 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                        {getNavIcon(item.href)}
+                      </div>
+                      <span className="text-base sm:text-lg tracking-tight">
+                        {getNavTitle(item.href, item.title)}
+                      </span>
+                    </div>
+                    <ArrowRight className="h-4 w-4 text-accent" />
                   </Link>
-                ))}
-              </div>
+                );
+              })}
+            </div>
 
-              {/* Mobile Drawer Action Buttons */}
-              <div className="pt-6 space-y-3 border-t border-border/40 mt-6">
-                <Link href="/bagis" className="block w-full">
-                  <Button className="w-full font-bold bg-accent hover:bg-accent/90 text-white py-3 text-base rounded-xl shadow-xs">
-                    {t("nav.donate")}
-                  </Button>
-                </Link>
-                <Link href="/basvuru-ve-iletisim" className="block w-full">
-                  <Button className="w-full font-bold bg-primary text-primary-foreground py-3 text-base rounded-xl shadow-xs">
-                    {t("nav.membership")}
-                  </Button>
-                </Link>
-              </div>
-            </motion.div>
-          </>
+            {/* Prominent Action Buttons at Bottom */}
+            <div className="pt-4 border-t border-border/40 mt-4 space-y-3 shrink-0">
+              <Link href="/bagis" onClick={() => setIsOpen(false)} className="block w-full">
+                <Button size="lg" className="w-full font-extrabold bg-accent hover:bg-accent/90 text-white py-3.5 text-base rounded-2xl shadow-sm flex items-center justify-center gap-2">
+                  <Heart className="h-5 w-5 fill-white/20" />
+                  {t("nav.donate")}
+                </Button>
+              </Link>
+              <Link href="/basvuru-ve-iletisim" onClick={() => setIsOpen(false)} className="block w-full">
+                <Button size="lg" className="w-full font-extrabold bg-primary hover:bg-primary/90 text-primary-foreground py-3.5 text-base rounded-2xl shadow-sm flex items-center justify-center gap-2">
+                  <UserCheck className="h-5 w-5" />
+                  {t("nav.membership")}
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </header>
