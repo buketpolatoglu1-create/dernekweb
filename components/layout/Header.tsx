@@ -132,11 +132,12 @@ export function Header() {
 
           {/* Hamburger button */}
           <button
-            onClick={() => setIsOpen(true)}
-            className="inline-flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl border border-border/50 text-muted-foreground hover:bg-muted lg:hidden"
+            type="button"
+            onClick={() => setIsOpen((prev) => !prev)}
+            className="inline-flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl border border-border/50 text-foreground hover:bg-muted cursor-pointer active:scale-95 transition-all lg:hidden shrink-0 touch-manipulation relative z-30"
             aria-label="Menüyü Aç"
           >
-            <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
+            {isOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
           </button>
         </div>
       </div>
@@ -164,8 +165,9 @@ export function Header() {
                 </span>
               </Link>
               <button
+                type="button"
                 onClick={() => setIsOpen(false)}
-                className="h-11 w-11 rounded-xl bg-muted/60 flex items-center justify-center text-primary hover:bg-muted transition-colors border border-border/60"
+                className="h-11 w-11 rounded-xl bg-muted/60 flex items-center justify-center text-primary hover:bg-muted transition-colors border border-border/60 cursor-pointer active:scale-95 touch-manipulation"
                 aria-label="Menüyü Kapat"
               >
                 <X className="h-6 w-6" />
