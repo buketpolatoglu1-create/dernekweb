@@ -27,6 +27,10 @@ export const siteConfig = {
       href: "/etkinlikler",
     },
     {
+      title: "Dernek Tüzüğü",
+      href: "/tuzuk",
+    },
+    {
       title: "Başvuru ve İletişim",
       href: "/basvuru-ve-iletisim",
     },

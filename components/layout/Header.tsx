@@ -27,6 +27,8 @@ export function Header() {
         return t("nav.announcements");
       case "/etkinlikler":
         return t("nav.events");
+      case "/tuzuk":
+        return language === "en" ? "Bylaws" : "Dernek Tüzüğü";
       case "/basvuru-ve-iletisim":
         return t("nav.contact");
       case "/bagis":
