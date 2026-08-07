@@ -131,23 +131,6 @@ export default function TuzukPage() {
               <p>Yönetim Kurulu 7 asıl ve 7 yedek üye olarak Genel Kurul tarafından seçilir. Denetim Kurulu ise 3 asıl ve 3 yedek üyeden oluşur.</p>
             </div>
 
-            {/* Geçici Yönetim Kurulu */}
-            <div className="space-y-3 pt-2">
-              <h3 className="text-lg font-bold text-primary flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-accent" />
-                Kurucular & Yönetim Kurulu
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs font-medium">
-                <div className="p-3 rounded-lg bg-primary/5 border border-primary/15">Seda Erzen (Yön. Kur. Bşk.)</div>
-                <div className="p-3 rounded-lg bg-primary/5 border border-primary/15">Ebru Timur (Başk. Yrd.)</div>
-                <div className="p-3 rounded-lg bg-primary/5 border border-primary/15">Banu Göksever (Sekreter)</div>
-                <div className="p-3 rounded-lg bg-primary/5 border border-primary/15">Simla Seden Özveren (Sayman)</div>
-                <div className="p-3 rounded-lg bg-primary/5 border border-primary/15">Aysun Zaman (Üye)</div>
-                <div className="p-3 rounded-lg bg-primary/5 border border-primary/15">Ali Ertan Çakır (Üye)</div>
-                <div className="p-3 rounded-lg bg-primary/5 border border-primary/15">Rüya Özdemir (Üye)</div>
-              </div>
-            </div>
-
           </CardContent>
         </Card>
 

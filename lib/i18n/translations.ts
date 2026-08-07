@@ -110,7 +110,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "about.faq.desc": "Derneğimiz ve işleyişimiz hakkında merak edilen temel soruların cevapları.",
 
     // Footer
-    "footer.desc": "18-28 yaş arası gençlerin kişisel, eğitsel ve mesleki gelişimini destekleyen bağımsız gençlik platformu.",
+    "footer.desc": "18-28 yaş arası gençlerin kişisel, eğitsel ve mesleki gelişimini destekleyen bağımsız gençlik derneği.",
     "footer.rights": "Tüm Hakları Saklıdır.",
     "footer.links": "Hızlı Bağlantılar",
     "footer.contact": "İletişim",
