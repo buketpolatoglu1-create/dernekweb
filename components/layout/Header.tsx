@@ -134,10 +134,6 @@ export function Header() {
           <button
             type="button"
             onClick={() => setIsOpen((prev) => !prev)}
-            onTouchEnd={(e) => {
-              e.preventDefault();
-              setIsOpen((prev) => !prev);
-            }}
             className="inline-flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl border border-border/60 bg-background text-primary hover:bg-accent/10 hover:text-accent cursor-pointer active:scale-95 transition-all lg:hidden shrink-0 touch-manipulation relative z-30"
             aria-label="Menüyü Aç"
           >
@@ -150,11 +146,11 @@ export function Header() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed inset-0 z-[100] bg-background flex flex-col justify-between overflow-y-auto p-5 sm:p-8 lg:hidden"
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="fixed inset-0 z-[9999] bg-background flex flex-col justify-between overflow-y-auto p-5 sm:p-8 lg:hidden"
           >
             {/* Top Bar inside Overlay */}
             <div className="flex items-center justify-between border-b border-border/40 pb-4 mb-4">
