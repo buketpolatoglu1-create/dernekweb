@@ -93,13 +93,13 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-3 lg:gap-5 xl:gap-7 mx-auto">
+        <nav className="hidden lg:flex items-center gap-2.5 xl:gap-4.5 2xl:gap-6 flex-1 justify-center max-w-4xl mx-2">
           {siteConfig.mainNav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "text-xs lg:text-sm font-semibold transition-colors hover:text-accent py-1 whitespace-nowrap",
+                "text-xs xl:text-sm font-semibold transition-colors hover:text-accent py-1 whitespace-nowrap",
                 pathname === item.href
                   ? "text-primary font-bold border-b-2 border-accent"
                   : "text-muted-foreground"
