@@ -36,15 +36,6 @@ export default function TuzukPage() {
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
             Derneğimizin kuruluş amacı, faaliyet alanları, üyelik hakları ve yönetim organlarını içeren resmi tüzük metnidir.
           </p>
-          
-          <div className="pt-2 flex flex-wrap justify-center gap-4">
-            <a href="/documents/18-28_Genclik_Dernegi_Tuzugu.txt" download="18-28_Genclik_Dernegi_Tuzugu.txt">
-              <Button size="lg" className="font-semibold bg-primary hover:bg-primary/90 text-primary-foreground gap-2">
-                <Download className="h-4 w-4" />
-                Tüzük Metnini İndir (.TXT)
-              </Button>
-            </a>
-          </div>
         </div>
 
         {/* Tüzük İçeriği */}

@@ -289,8 +289,8 @@ export default function AboutPage() {
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed pt-1">
               {language === "en"
-                ? "Our official association bylaws detailing our establishment goals, membership rights, governing bodies, and operational principles. You can read the full text online or download the file."
-                : "Derneğimizin kuruluş amacı, yönetim organları, çalışma ilkeleri ve üyelerimizin hak/yükümlülüklerini belirleyen resmi tüzük belgemizdir. Tüzüğü web sitemiz üzerinden online inceleyebilir veya doğrudan indirebilirsiniz."}
+                ? "Our official association bylaws detailing our establishment goals, membership rights, governing bodies, and operational principles. You can read the full text online on our website."
+                : "Derneğimizin kuruluş amacı, yönetim organları, çalışma ilkeleri ve üyelerimizin hak/yükümlülüklerini belirleyen resmi tüzük belgemizdir. Tüzüğü web sitemiz üzerinden online inceleyebilirsiniz."}
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
@@ -300,12 +300,6 @@ export default function AboutPage() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
-            <a href="/documents/18-28_Genclik_Dernegi_Tuzugu.txt" download="18-28_Genclik_Dernegi_Tuzugu.txt">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto font-bold border-primary/40 text-primary hover:bg-primary/5">
-                <Download className="mr-2 h-4 w-4" />
-                {language === "en" ? "Download (.TXT)" : "Tüzük İndir"}
-              </Button>
-            </a>
           </div>
         </div>
 
