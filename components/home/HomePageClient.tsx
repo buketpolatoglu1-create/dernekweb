@@ -96,17 +96,17 @@ export function HomePageClient({ latestAnnouncements, allEvents }: HomePageClien
               className="h-20 sm:h-24 w-auto relative object-contain mix-blend-multiply dark:invert dark:mix-blend-screen"
             />
           </div>
-          <p className="text-xl sm:text-2xl font-bold tracking-widest uppercase text-accent mb-4">
+          <p className="text-sm sm:text-xl font-bold tracking-widest uppercase text-accent mb-3 sm:mb-4">
             {t("hero.badge")}
           </p>
-          <h1 className="font-heading text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight text-primary max-w-5xl mx-auto leading-[1.05] mb-6">
+          <h1 className="font-heading text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-primary max-w-5xl mx-auto leading-[1.1] mb-6">
             {t("hero.title1")}
             <br />
             <span className="bg-gradient-to-r from-accent via-teal-500 to-cyan-400 bg-clip-text text-transparent">
               {t("hero.title2")}
             </span>
           </h1>
-          <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="text-sm sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed">
             {t("hero.desc")}
           </p>
           <div className="flex justify-center items-center">

@@ -60,13 +60,13 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden xl:flex items-center gap-4 xl:gap-6 2xl:gap-8 mx-auto">
+        <nav className="hidden lg:flex items-center gap-3 lg:gap-5 xl:gap-7 mx-auto">
           {siteConfig.mainNav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm lg:text-[15px] font-semibold transition-colors hover:text-accent py-1 whitespace-nowrap",
+                "text-xs lg:text-sm font-semibold transition-colors hover:text-accent py-1 whitespace-nowrap",
                 pathname === item.href
                   ? "text-primary font-bold border-b-2 border-accent"
                   : "text-muted-foreground"
@@ -78,32 +78,32 @@ export function Header() {
         </nav>
 
         {/* Action Button & Language Selector & Mobile Nav Toggle */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0 ml-4 lg:ml-6 xl:ml-10">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0 ml-2 lg:ml-4 xl:ml-8">
           {/* 1st: Teal Donate Button */}
-          <Link href="/bagis" className="hidden md:inline-flex">
-            <Button size="default" className="font-bold bg-accent hover:bg-accent/90 text-white shadow-xs px-4 py-2 text-sm rounded-xl transition-all duration-300">
+          <Link href="/bagis" className="hidden sm:inline-flex">
+            <Button size="default" className="font-bold bg-accent hover:bg-accent/90 text-white shadow-xs px-3.5 sm:px-4 py-2 text-xs sm:text-sm rounded-xl transition-all duration-300">
               {t("nav.donate")}
             </Button>
           </Link>
 
           {/* 2nd: Blue Membership / Application Button */}
           <Link href="/basvuru-ve-iletisim" className="hidden md:inline-flex">
-            <Button size="default" className="font-bold bg-primary hover:bg-primary/90 text-primary-foreground shadow-xs px-4 py-2 text-sm rounded-xl group transition-all duration-300">
+            <Button size="default" className="font-bold bg-primary hover:bg-primary/90 text-primary-foreground shadow-xs px-3.5 sm:px-4 py-2 text-xs sm:text-sm rounded-xl group transition-all duration-300">
               {t("nav.membership")}
-              <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-1.5 h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
 
-          {/* Language Selector Dropdown (Globe icon + TR/EN selector) */}
+          {/* Language Selector Dropdown */}
           <LanguageSelector />
 
           {/* Hamburger button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-border/50 text-muted-foreground hover:bg-muted md:hidden"
+            className="inline-flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl border border-border/50 text-muted-foreground hover:bg-muted lg:hidden"
             aria-label="Menüyü Aç/Kapat"
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
           </button>
         </div>
       </div>
@@ -118,7 +118,7 @@ export function Header() {
               animate={{ opacity: 0.4 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 top-20 sm:top-24 z-40 bg-black md:hidden"
+              className="fixed inset-0 top-20 sm:top-24 z-40 bg-black lg:hidden"
             />
             {/* Mobile Drawer */}
             <motion.div
@@ -126,25 +126,35 @@ export function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.2 }}
-              className="fixed inset-y-20 sm:inset-y-24 right-0 z-40 w-[290px] border-l border-border bg-background px-6 py-6 shadow-xl md:hidden"
+              className="fixed inset-y-20 sm:inset-y-24 right-0 z-40 w-[300px] max-w-[85vw] border-l border-border bg-background px-6 py-6 shadow-2xl lg:hidden flex flex-col justify-between overflow-y-auto"
             >
-              <div className="flex flex-col space-y-4">
+              <div className="flex flex-col space-y-3">
                 {siteConfig.mainNav.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "text-base font-semibold transition-colors hover:text-accent py-2 border-b border-border/40",
+                      "text-base font-semibold transition-colors hover:text-accent py-2.5 border-b border-border/30 flex items-center justify-between",
                       pathname === item.href
-                        ? "text-primary"
+                        ? "text-primary font-bold"
                         : "text-muted-foreground"
                     )}
                   >
-                    {getNavTitle(item.href, item.title)}
+                    <span>{getNavTitle(item.href, item.title)}</span>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground/50" />
                   </Link>
                 ))}
-                <Link href="/basvuru-ve-iletisim" className="pt-4">
-                  <Button className="w-full font-bold bg-primary text-primary-foreground py-3 text-base rounded-xl">
+              </div>
+
+              {/* Mobile Drawer Action Buttons */}
+              <div className="pt-6 space-y-3 border-t border-border/40 mt-6">
+                <Link href="/bagis" className="block w-full">
+                  <Button className="w-full font-bold bg-accent hover:bg-accent/90 text-white py-3 text-base rounded-xl shadow-xs">
+                    {t("nav.donate")}
+                  </Button>
+                </Link>
+                <Link href="/basvuru-ve-iletisim" className="block w-full">
+                  <Button className="w-full font-bold bg-primary text-primary-foreground py-3 text-base rounded-xl shadow-xs">
                     {t("nav.membership")}
                   </Button>
                 </Link>
