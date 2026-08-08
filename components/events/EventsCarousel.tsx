@@ -147,12 +147,12 @@ export function EventsCarousel({ events }: EventsCarouselProps) {
                   <Link href={`/etkinlikler#${event.slug}`} className="relative group cursor-pointer block h-full">
                     <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-primary/55 via-secondary/45 to-primary/55 opacity-0 group-hover:opacity-100 blur-md group-hover:blur-xl transition-opacity duration-300 pointer-events-none" />
                     <div className="relative overflow-hidden rounded-2xl border-2 border-primary/80 bg-background/95 backdrop-blur-xs p-6 space-y-4 transition-colors duration-300 group-hover:border-primary shadow-xs flex flex-col justify-between h-full min-h-[350px]">
-                      <div className="h-44 sm:h-48 w-full rounded-xl bg-slate-950/5 dark:bg-slate-900/40 flex items-center justify-center overflow-hidden relative border border-border/30 p-1">
+                      <div className="h-36 w-full rounded-lg bg-linear-to-br from-primary/10 to-secondary/10 flex items-center justify-center overflow-hidden relative border border-border/30">
                         {event.images && event.images.length > 0 ? (
                           <img
                             src={event.images[0]}
                             alt={title}
-                            className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                            className="h-full w-full object-cover"
                           />
                         ) : (
                           <Calendar className="h-10 w-10 text-primary/40" />
