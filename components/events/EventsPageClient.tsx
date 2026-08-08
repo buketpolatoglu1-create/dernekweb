@@ -50,11 +50,11 @@ export function EventsPageClient({ events }: EventsPageClientProps) {
                 {/* Event Image Grid preview */}
                 <div className="grid grid-cols-2 gap-1.5 p-4 bg-muted/20 border-b border-border/40">
                   {event.images && event.images.length > 0 ? (
-                    <div className={`h-36 rounded-lg overflow-hidden border border-border/30 relative ${event.images[0].includes("kariyer-yolculugu.png") ? "bg-slate-950/5 dark:bg-slate-900/40 p-1 flex items-center justify-center" : ""}`}>
+                    <div className={`h-36 rounded-lg overflow-hidden border border-border/30 relative ${event.images[0].includes("kariyer-yolculugu.png") || event.images[0].includes("functional-training-poster") || event.images[0].includes("poster") ? "bg-slate-950/5 dark:bg-slate-900/40 p-1 flex items-center justify-center" : ""}`}>
                       <img
                         src={event.images[0]}
                         alt={`${title} - Image 1`}
-                        className={`h-full w-full hover:scale-105 transition-transform duration-300 ${event.images[0].includes("kariyer-yolculugu.png") ? "object-contain" : "object-cover"}`}
+                        className={`h-full w-full hover:scale-105 transition-transform duration-300 ${event.images[0].includes("kariyer-yolculugu.png") || event.images[0].includes("functional-training-poster") || event.images[0].includes("poster") ? "object-contain" : "object-cover"}`}
                       />
                     </div>
                   ) : (
@@ -63,11 +63,11 @@ export function EventsPageClient({ events }: EventsPageClientProps) {
                     </div>
                   )}
                   {event.images && event.images.length > 1 ? (
-                    <div className={`h-36 rounded-lg overflow-hidden border border-border/30 relative ${event.images[1].includes("kariyer-yolculugu.png") ? "bg-slate-950/5 dark:bg-slate-900/40 p-1 flex items-center justify-center" : ""}`}>
+                    <div className={`h-36 rounded-lg overflow-hidden border border-border/30 relative ${event.images[1].includes("kariyer-yolculugu.png") || event.images[1].includes("functional-training-poster") || event.images[1].includes("poster") ? "bg-slate-950/5 dark:bg-slate-900/40 p-1 flex items-center justify-center" : ""}`}>
                       <img
                         src={event.images[1]}
                         alt={`${title} - Image 2`}
-                        className={`h-full w-full hover:scale-105 transition-transform duration-300 ${event.images[1].includes("kariyer-yolculugu.png") ? "object-contain" : "object-cover"}`}
+                        className={`h-full w-full hover:scale-105 transition-transform duration-300 ${event.images[1].includes("kariyer-yolculugu.png") || event.images[1].includes("functional-training-poster") || event.images[1].includes("poster") ? "object-contain" : "object-cover"}`}
                       />
                     </div>
                   ) : (
