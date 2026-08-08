@@ -43,31 +43,31 @@ export function Footer() {
             <p className="text-sm text-muted-foreground max-w-sm">
               {t("footer.desc")}
             </p>
-            <div className="flex space-x-4">
+            <div className="flex items-center space-x-3.5 pt-2">
               <a
                 href={siteConfig.links.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="text-muted-foreground hover:text-accent transition-colors"
+                className="h-11 w-11 rounded-xl bg-primary/5 border border-primary/15 flex items-center justify-center text-primary hover:text-accent hover:bg-accent/10 hover:border-accent/40 hover:scale-110 transition-all duration-300 shadow-2xs"
                 aria-label="Instagram"
               >
-                <Instagram className="h-5 w-5" />
+                <Instagram className="h-6 w-6 stroke-[2]" />
               </a>
               <a
                 href={siteConfig.links.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="text-muted-foreground hover:text-accent transition-colors"
+                className="h-11 w-11 rounded-xl bg-primary/5 border border-primary/15 flex items-center justify-center text-primary hover:text-accent hover:bg-accent/10 hover:border-accent/40 hover:scale-110 transition-all duration-300 shadow-2xs"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="h-6 w-6 stroke-[2]" />
               </a>
               <a
                 href={`mailto:${siteConfig.links.contactEmail}`}
-                className="text-muted-foreground hover:text-accent transition-colors"
+                className="h-11 w-11 rounded-xl bg-primary/5 border border-primary/15 flex items-center justify-center text-primary hover:text-accent hover:bg-accent/10 hover:border-accent/40 hover:scale-110 transition-all duration-300 shadow-2xs"
                 aria-label="Email"
               >
-                <Mail className="h-5 w-5" />
+                <Mail className="h-6 w-6 stroke-[2]" />
               </a>
             </div>
           </div>
