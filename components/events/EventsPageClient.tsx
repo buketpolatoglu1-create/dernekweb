@@ -48,31 +48,27 @@ export function EventsPageClient({ events }: EventsPageClientProps) {
             return (
               <Card id={event.slug} key={event.slug} className="flex flex-col overflow-hidden border-2 border-primary/80 hover:border-primary hover:shadow-md transition-all duration-300 scroll-mt-24">
                 {/* Event Image Grid preview */}
-                <div className="grid grid-cols-2 gap-1.5 p-4 bg-muted/20 border-b border-border/40">
+                <div className={`p-3 bg-muted/20 border-b border-border/40 ${event.images && event.images.length === 1 ? "flex justify-center" : "grid grid-cols-2 gap-2"}`}>
                   {event.images && event.images.length > 0 ? (
-                    <div className="h-36 rounded-lg overflow-hidden border border-border/30 relative">
+                    <div className={`rounded-xl overflow-hidden border border-border/40 bg-slate-950/5 dark:bg-slate-900/40 p-1 flex items-center justify-center relative ${event.images.length === 1 ? "h-48 sm:h-56 w-full" : "h-36 sm:h-40"}`}>
                       <img
                         src={event.images[0]}
                         alt={`${title} - Image 1`}
-                        className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
+                        className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                   ) : (
-                    <div className="h-36 rounded-lg bg-linear-to-tr from-primary/10 to-accent/10 flex items-center justify-center border border-border/30 group">
+                    <div className="h-36 rounded-xl bg-linear-to-tr from-primary/10 to-accent/10 flex items-center justify-center border border-border/30 group">
                       <ImageIcon className="h-6 w-6 text-primary/40 group-hover:scale-110 transition-transform" />
                     </div>
                   )}
-                  {event.images && event.images.length > 1 ? (
-                    <div className="h-36 rounded-lg overflow-hidden border border-border/30 relative">
+                  {event.images && event.images.length > 1 && (
+                    <div className="h-36 sm:h-40 rounded-xl overflow-hidden border border-border/40 bg-slate-950/5 dark:bg-slate-900/40 p-1 flex items-center justify-center relative">
                       <img
                         src={event.images[1]}
                         alt={`${title} - Image 2`}
-                        className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
+                        className="h-full w-full object-contain hover:scale-105 transition-transform duration-300"
                       />
-                    </div>
-                  ) : (
-                    <div className="h-36 rounded-lg bg-linear-to-bl from-secondary/10 to-accent/10 flex items-center justify-center border border-border/30 group">
-                      <ImageIcon className="h-6 w-6 text-secondary/40 group-hover:scale-110 transition-transform" />
                     </div>
                   )}
                 </div>
