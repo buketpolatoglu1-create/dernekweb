@@ -111,7 +111,7 @@ export function Header() {
         </nav>
 
         {/* Action Button & Language Selector & Mobile Nav Toggle */}
-        <div className="flex items-center gap-1 sm:gap-2.5 shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
           {/* 1st: Teal Donate Button */}
           <Link href="/bagis" className="hidden sm:inline-flex">
             <Button size="default" className="font-bold bg-accent hover:bg-accent/90 text-white shadow-xs px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-xl transition-all duration-300">
@@ -127,17 +127,19 @@ export function Header() {
             </Button>
           </Link>
 
-          {/* Language Selector Dropdown */}
-          <LanguageSelector />
+          {/* Language Selector Dropdown (Desktop Only) */}
+          <div className="hidden lg:block">
+            <LanguageSelector />
+          </div>
 
-          {/* Hamburger button */}
+          {/* Mobile Hamburger button */}
           <button
             type="button"
             onClick={() => setIsOpen((prev) => !prev)}
-            className="inline-flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl border border-border/60 bg-background text-primary hover:bg-accent/10 hover:text-accent cursor-pointer active:scale-95 transition-all lg:hidden shrink-0 touch-manipulation relative z-30"
+            className="inline-flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl border border-primary/20 bg-primary/5 text-primary hover:bg-accent/10 hover:text-accent cursor-pointer active:scale-95 transition-all lg:hidden shrink-0 touch-manipulation relative z-30"
             aria-label="Menüyü Aç"
           >
-            {isOpen ? <X className="h-5 w-5 stroke-[2.5]" /> : <Menu className="h-5 w-5 stroke-[2.5]" />}
+            {isOpen ? <X className="h-6 w-6 stroke-[2.5]" /> : <Menu className="h-6 w-6 stroke-[2.5]" />}
           </button>
         </div>
       </div>
@@ -153,25 +155,28 @@ export function Header() {
             className="fixed inset-0 z-[9999] bg-background flex flex-col justify-between overflow-y-auto p-5 sm:p-8 lg:hidden"
           >
             {/* Top Bar inside Overlay */}
-            <div className="flex items-center justify-between border-b border-border/40 pb-4 mb-4">
-              <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2.5">
+            <div className="flex items-center justify-between border-b border-border/40 pb-4 mb-4 gap-2">
+              <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 shrink-0">
                 <img
                   src="/images/logo-icon.png"
                   alt="18-28 Gençlik Derneği"
-                  className="h-10 w-auto object-contain"
+                  className="h-9 w-auto object-contain"
                 />
-                <span className="font-heading text-lg font-extrabold text-primary">
+                <span className="font-heading text-sm sm:text-base font-extrabold text-primary">
                   18-28 Gençlik Derneği
                 </span>
               </Link>
-              <button
-                type="button"
-                onClick={() => setIsOpen(false)}
-                className="h-11 w-11 rounded-xl bg-muted/60 flex items-center justify-center text-primary hover:bg-muted transition-colors border border-border/60 cursor-pointer active:scale-95 touch-manipulation"
-                aria-label="Menüyü Kapat"
-              >
-                <X className="h-6 w-6" />
-              </button>
+              <div className="flex items-center gap-2 shrink-0">
+                <LanguageSelector />
+                <button
+                  type="button"
+                  onClick={() => setIsOpen(false)}
+                  className="h-10 w-10 rounded-xl bg-muted/60 flex items-center justify-center text-primary hover:bg-muted transition-colors border border-border/60 cursor-pointer active:scale-95 touch-manipulation"
+                  aria-label="Menüyü Kapat"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
             </div>
 
             {/* Vertically Spaced Full Mobile Navigation List */}
