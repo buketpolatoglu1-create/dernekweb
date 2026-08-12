@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Instagram, Linkedin } from "lucide-react";
+import { Mail, Instagram, Linkedin, MapPin } from "lucide-react";
 import { siteConfig } from "@/content/site-config";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
@@ -96,11 +96,18 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-primary uppercase tracking-wider">
               {t("footer.contact")}
             </h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
+            <ul className="space-y-3 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2.5">
+                <MapPin className="h-4 w-4 text-accent shrink-0 mt-1" />
+                <span className="leading-relaxed text-xs sm:text-sm">
+                  {siteConfig.links.address}
+                </span>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Mail className="h-4 w-4 text-accent shrink-0" />
                 <a
                   href={`mailto:${siteConfig.links.contactEmail}`}
-                  className="hover:text-accent transition-colors break-all"
+                  className="hover:text-accent font-medium transition-colors break-all text-xs sm:text-sm"
                 >
                   {siteConfig.links.contactEmail}
                 </a>

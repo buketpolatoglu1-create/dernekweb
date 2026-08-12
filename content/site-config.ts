@@ -8,6 +8,7 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/in/on-sekiz-yirmi-sekiz-gen%C3%A7lik-derne%C4%9Fi-ab94ab354/",
     email: "info@18-28genclikdernegi.org",
     contactEmail: "iletisim@18-28genclikdernegi.org",
+    address: "İçerenköy Mah. Çetinkaya Sok. Prestij Plaza No:28 K:2 D:4 Ataşehir / İstanbul",
   },
   mainNav: [
     {

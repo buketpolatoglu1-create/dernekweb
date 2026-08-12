@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, Building2, GraduationCap, Instagram, Linkedin, Mail, Users } from "lucide-react";
+import { ArrowUpRight, Building2, GraduationCap, Instagram, Linkedin, Mail, MapPin, Users } from "lucide-react";
 import { siteConfig } from "@/content/site-config";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -163,7 +163,19 @@ export default function ApplicationAndContactPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Contact Info Cards */}
-            <div className="lg:col-span-4 flex flex-row flex-wrap gap-4">
+            <div className="lg:col-span-4 flex flex-col gap-4">
+              {/* Adres */}
+              <div className="w-full border border-border/40 p-5 rounded-xl bg-background shadow-3xs flex items-start gap-4">
+                <div className="h-12 w-12 rounded-lg bg-teal-50 dark:bg-teal-950 flex items-center justify-center text-teal-600 dark:text-teal-400 shrink-0">
+                  <MapPin className="h-6 w-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-sm text-primary">Dernek Adresi</h4>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-1">
+                    {siteConfig.links.address}
+                  </p>
+                </div>
+              </div>
               {/* Email */}
               <div className="flex-1 min-w-[180px] border border-border/40 p-5 rounded-xl bg-background shadow-3xs flex items-start gap-4">
                 <div className="h-12 w-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent shrink-0">
