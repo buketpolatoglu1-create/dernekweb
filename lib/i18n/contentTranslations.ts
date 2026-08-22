@@ -4,15 +4,15 @@ export const announcementTranslations: Record<string, { title: string; excerpt: 
     excerpt: "Free online workshops on soft skills, communication, resume writing, and career planning.",
     body: "We continue our personal development training series for youth aged 18-28. Join our online sessions to boost your career skills."
   },
-  "istanbul-maratonu-halk-kosusu": {
-    title: "Istanbul Marathon Fun Run & Charity Step",
-    excerpt: "We ran together at the Istanbul Marathon for equal opportunity in youth education.",
-    body: "Our volunteer team participated in the Istanbul Marathon to raise awareness and support for youth education."
+  "duygusal-ceviklik-tepkiden-secime": {
+    title: "Emotional Agility: The Journey from Reaction to Choice",
+    excerpt: "You are invited to the inspiring webinar with our Founder & President, Seda Erzen, where we will learn to make conscious choices under the guidance of our emotions.",
+    body: "How do we relate to our emotions? Is it possible to make conscious choices instead of reacting impulsively?\n\nWe will explore the concept of emotional agility in depth during our webinar 'Emotional Agility: The Journey from Reaction to Choice' with our Founder & President, Consultant, Author, and PCC Coach Seda Erzen.\n\nWe will discover ways to go beyond our automatic reactions in challenging situations and make conscious choices aligned with our values.\n\n---\n\n### Event Details\n\n- 📅 **Date:** Friday, September 4, 2026\n- ⏰ **Time:** 20.00 - 21.00\n- 💻 **Platform:** Zoom (Online)\n\nWe welcome all young people and volunteers to this inspiring webinar! The participation link will be shared before the event."
   },
   "mentorluk-basvurulari-basladi": {
     title: "Mentorship Program Applications Are Open",
-    excerpt: "Pair with industry professionals for 3 months to shape your career roadmap.",
-    body: "Applications for our 3-month mentorship program are officially open. Professional mentors will guide you in your career."
+    excerpt: "Pair with industry professionals for 4 months to shape your career roadmap.",
+    body: "Applications for our 4-month mentorship program are officially open. Professional mentors will guide you in your career."
   },
   "teknoloji-komitesi-mobil-uygulama": {
     title: "Technology Committee Mobile Application Project",

@@ -507,8 +507,8 @@ export function DonationPageClient() {
               </h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {language === "en"
-                  ? "Matching young talents with experienced industry executives for 3-month career guidance."
-                  : "Sektör profesyonelleri ile gençleri eşleştiren 3 aylık ücretsiz koçluk ve kariyer mentorluğu süreçleri."}
+                  ? "Matching young talents with experienced industry executives for 4-month career guidance."
+                  : "Sektör profesyonelleri ile gençleri eşleştiren 4 aylık ücretsiz koçluk ve kariyer mentorluğu süreçleri."}
               </p>
             </Card>
 

@@ -60,7 +60,7 @@ export default function ApplicationAndContactPage() {
             </div>
           </div>
 
-          {/* Gönüllü Mentor Başvurusu */}
+          {/* Gönüllü Mentor & Koç Başvurusu */}
           <div className="bg-linear-to-r from-primary/5 via-secondary/5 to-primary/5 border-2 border-primary/20 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xs hover:shadow-[0_12px_35px_-8px_rgba(20,184,166,0.4)] hover:border-teal-400 hover:-translate-y-1 transition-all duration-300 group">
             <div className="space-y-2 max-w-2xl">
               <div className="flex items-center gap-3">
