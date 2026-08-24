@@ -70,6 +70,15 @@ export function AnnouncementDetailClient({ announcement }: AnnouncementDetailCli
 
         {/* Content Body */}
         <article className="prose max-w-none pt-4">
+          {announcement.coverImage && (
+            <div className="mb-8 overflow-hidden rounded-2xl border-2 border-primary/20 shadow-md max-w-md mx-auto hover:border-primary/45 transition-all duration-300">
+              <img
+                src={announcement.coverImage}
+                alt={title}
+                className="w-full h-auto object-contain mx-auto"
+              />
+            </div>
+          )}
           {renderMarkdown(body)}
         </article>
 
