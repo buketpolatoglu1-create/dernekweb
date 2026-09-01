@@ -163,7 +163,7 @@ export default function ApplicationAndContactPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Contact Info Cards */}
-            <div className="lg:col-span-4 flex flex-col gap-4">
+            <div className="lg:col-span-5 flex flex-col gap-4">
               {/* Adres */}
               <div className="w-full border border-border/40 p-5 rounded-xl bg-background shadow-3xs flex items-start gap-4">
                 <div className="h-12 w-12 rounded-lg bg-teal-50 dark:bg-teal-950 flex items-center justify-center text-teal-600 dark:text-teal-400 shrink-0">
@@ -177,37 +177,37 @@ export default function ApplicationAndContactPage() {
                 </div>
               </div>
               {/* Email */}
-              <div className="flex-1 min-w-[180px] border border-border/40 p-5 rounded-xl bg-background shadow-3xs flex items-start gap-4">
+              <div className="w-full border border-border/40 p-5 rounded-xl bg-background shadow-3xs flex items-start gap-4">
                 <div className="h-12 w-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent shrink-0">
                   <Mail className="h-6 w-6" />
                 </div>
                 <div>
                   <h4 className="font-bold text-sm text-primary">E-posta</h4>
-                  <a href={`mailto:${siteConfig.links.contactEmail}`} className="text-sm text-muted-foreground hover:text-accent transition-colors block mt-1 break-all">
+                  <a href={`mailto:${siteConfig.links.contactEmail}`} className="text-sm text-muted-foreground hover:text-accent transition-colors block mt-1 whitespace-nowrap">
                     {siteConfig.links.contactEmail}
                   </a>
                 </div>
               </div>
               {/* Instagram */}
-              <div className="flex-1 min-w-[180px] border border-border/40 p-5 rounded-xl bg-background shadow-3xs flex items-start gap-4">
+              <div className="w-full border border-border/40 p-5 rounded-xl bg-background shadow-3xs flex items-start gap-4">
                 <div className="h-12 w-12 rounded-lg bg-pink-50 dark:bg-pink-950 flex items-center justify-center text-pink-500 shrink-0">
                   <Instagram className="h-6 w-6" />
                 </div>
                 <div>
                   <h4 className="font-bold text-sm text-primary">Instagram</h4>
-                  <a href={siteConfig.links.instagram} target="_blank" rel="noreferrer" className="text-sm text-muted-foreground hover:text-accent transition-colors block mt-1 break-all">
+                  <a href={siteConfig.links.instagram} target="_blank" rel="noreferrer" className="text-sm text-muted-foreground hover:text-accent transition-colors block mt-1 whitespace-nowrap">
                     @18_28genclikdernegi
                   </a>
                 </div>
               </div>
               {/* LinkedIn */}
-              <div className="flex-1 min-w-[180px] border border-border/40 p-5 rounded-xl bg-background shadow-3xs flex items-start gap-4">
+              <div className="w-full border border-border/40 p-5 rounded-xl bg-background shadow-3xs flex items-start gap-4">
                 <div className="h-12 w-12 rounded-lg bg-blue-50 dark:bg-blue-950 flex items-center justify-center text-blue-600 shrink-0">
                   <Linkedin className="h-6 w-6" />
                 </div>
                 <div>
                   <h4 className="font-bold text-sm text-primary">LinkedIn</h4>
-                  <a href={siteConfig.links.linkedin} target="_blank" rel="noreferrer" className="text-sm text-muted-foreground hover:text-accent transition-colors block mt-1 break-all">
+                  <a href={siteConfig.links.linkedin} target="_blank" rel="noreferrer" className="text-sm text-muted-foreground hover:text-accent transition-colors block mt-1 whitespace-nowrap">
                     18-28 Gençlik Derneği
                   </a>
                 </div>
@@ -215,7 +215,7 @@ export default function ApplicationAndContactPage() {
             </div>
 
             {/* Direct Form */}
-            <div className="lg:col-span-8 border border-border/40 p-6 sm:p-8 rounded-2xl bg-background shadow-2xs">
+            <div className="lg:col-span-7 border border-border/40 p-6 sm:p-8 rounded-2xl bg-background shadow-2xs">
               <ContactForm />
             </div>
           </div>
