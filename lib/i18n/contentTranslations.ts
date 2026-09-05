@@ -14,6 +14,11 @@ export const announcementTranslations: Record<string, { title: string; excerpt: 
     excerpt: "Pair with industry professionals for 4 months to shape your career roadmap.",
     body: "Applications for our 4-month mentorship program are officially open. Professional mentors will guide you in your career."
   },
+  "olagan-genel-kurul-toplantisi": {
+    title: "Ordinary General Assembly Meeting Announcement",
+    excerpt: "The Ordinary General Assembly Meeting of 18-28 Youth Association will be held on October 12, 2026, hosted by KidZania at Akasya Mall.",
+    body: "Dear Members,\n\nThe Ordinary General Assembly Meeting of the ONSEKIZ YIRMISEKIZ YOUTH Association will take place on the specified date to discuss the agenda items below.\n\nOur first meeting will be held on **12.10.2026 at 13:00** hosted by **KidZania at Akasya Mall**.\n\nIf a sufficient majority is not achieved at the first meeting, the **second meeting** will be held on **21.10.2026 at the same time and place** without requiring a majority.\n\n---\n\n### Meeting Details\n\n- 📅 **First Meeting Date:** October 12, 2026\n- ⏰ **Time:** 13:00\n- 📍 **Location / Venue:** KidZania, Acıbadem Mah. Çeçen Sok. Akasya Mall No:25/113, Üsküdar / Istanbul\n- 📅 **Second Meeting Date:** October 21, 2026\n- ⏰ **Time:** 13:00\n- 📍 **Location / Venue:** KidZania, Acıbadem Mah. Çeçen Sok. Akasya Mall No:25/113, Üsküdar / Istanbul\n\n---\n\n### Agenda Items\n\n1. Opening and roll call\n2. Election of the Presiding Board\n3. Reading and deliberation of the Board of Directors activity report\n4. Reading of the Supervisory Board report\n5. Deliberation and approval of financial statements (Balance Sheet and Income Statement)\n6. Discharge of the Board of Directors and Supervisory Board\n7. Deliberation and resolution of the new term budget\n8. Wishes and remarks\n9. Closing\n\n---\n\nYour participation in the meeting is of great importance to reflect your voice in the decisions to be taken on behalf of our association.\n\nPlease confirm your attendance status by **October 1** via email ([iletisim@18-28genclikdernegi.org](mailto:iletisim@18-28genclikdernegi.org)) or phone."
+  },
   "teknoloji-komitesi-mobil-uygulama": {
     title: "Technology Committee Mobile Application Project",
     excerpt: "We are developing projects together in mobile app development, UI/UX, and frontend technologies.",
