@@ -349,9 +349,16 @@ export function HomePageClient({ latestAnnouncements, allEvents }: HomePageClien
                         <Calendar className="h-3.5 w-3.5 text-accent" />
                         {item.date}
                       </span>
-                      {item.isOnline && (
-                        <Badge variant="secondary" className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20 text-[10px]">
-                          Online
+                      {item.isOnline !== undefined && (
+                        <Badge
+                          variant="secondary"
+                          className={
+                            item.isOnline
+                              ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20 text-[10px]"
+                              : "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20 text-[10px]"
+                          }
+                        >
+                          {item.isOnline ? "Online" : (language === "en" ? "In-Person" : "Yüz Yüze")}
                         </Badge>
                       )}
                     </div>
